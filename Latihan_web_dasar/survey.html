@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Kepuasan Pelanggan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 30px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 24px 32px;
+            text-align: center;
+        }
+        .header h2 {
+            margin: 0 0 6px 0;
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+        .header p {
+            margin: 0;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        .section {
+            padding: 24px 32px 10px 32px;
+            border-bottom: 1px solid #e8ecef;
+        }
+        .section h3 {
+            margin: 0 0 16px 0;
+            color: #2c3e50;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table td {
+            padding: 7px 6px;
+            vertical-align: middle;
+        }
+        table td:first-child {
+            width: 130px;
+            font-size: 14px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #cdd4da;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+            color: #333;
+            background: #fafbfc;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #3498db;
+            outline: none;
+            background: #fff;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 6px 0 14px 0;
+        }
+        .checkbox-group label, .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #444;
+            cursor: pointer;
+            background: #f4f6f8;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid #dde2e7;
+            transition: background 0.15s;
+        }
+        .checkbox-group label:hover, .radio-group label:hover {
+            background: #e3eaf3;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            accent-color: #3498db;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .btn-group {
+            padding: 20px 32px 28px 32px;
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+        }
+        input[type="submit"] {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 36px;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        input[type="submit"]:hover {
+            background-color: #1a6fa3;
+        }
+        input[type="reset"] {
+            background-color: #95a5a6;
+            color: white;
+            border: none;
+            padding: 10px 36px;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        input[type="reset"]:hover {
+            background-color: #7f8c8d;
+        }
+        .textarea-section {
+            padding: 18px 32px 10px 32px;
+        }
+        .textarea-section h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        .textarea-section textarea {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Survey Kepuasan Pelanggan</h2>
+            <p>Pendapat Anda sangat berarti bagi kami. Terima kasih telah meluangkan waktu.</p>
+        </div>
+
+        <form method="post" action="">
+
+            <!-- DATA PELANGGAN -->
+            <div class="section">
+                <h3>Data Pelanggan</h3>
+                <table>
+                    <tr>
+                        <td>Nama Lengkap</td>
+                        <td><input type="text" name="nama" size="30" maxlength="100"
+                            placeholder="Masukkan nama lengkap Anda"></td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td><input type="text" name="alamat" size="30"
+                            placeholder="Jalan, Kota, Provinsi"></td>
+                    </tr>
+                    <tr>
+                        <td>No. Telepon</td>
+                        <td><input type="tel" name="tlp" size="30" maxlength="15"
+                            placeholder="Contoh: 08123456789"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="email" name="email" size="30"
+                            placeholder="contoh@email.com"></td>
+                    </tr>
+                    <tr>
+                        <td>Kategori Pelanggan</td>
+                        <td>
+                            <select name="kategori">
+                                <option value="">-- Pilih Kategori --</option>
+                                <option value="individu">Pelanggan Individu</option>
+                                <option value="bisnis">Pelanggan Bisnis</option>
+                                <option value="toko_kue">Pelanggan Toko Kue</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- PRODUK YANG DISUKAI -->
+            <div class="section">
+                <h3>Produk yang Disukai</h3>
+                <p style="font-size:13px; color:#777; margin:0 0 8px 0;">
+                    Pilih semua produk yang pernah Anda gunakan dan sukai:
+                </p>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="produk" value="laptop"> Laptop</label>
+                    <label><input type="checkbox" name="produk" value="smartphone"> Smartphone</label>
+                    <label><input type="checkbox" name="produk" value="tablet"> Tablet</label>
+                    <label><input type="checkbox" name="produk" value="aksesoris"> Aksesoris</label>
+                    <label><input type="checkbox" name="produk" value="software"> Software</label>
+                    <label><input type="checkbox" name="produk" value="jam_tangan"> Jam Tangan</label>
+                    <label><input type="checkbox" name="produk" value="kue_bolu"> Kue Bolu</label>
+                    <label><input type="checkbox" name="produk" value="brownies"> Brownies</label>
+                </div>
+            </div>
+
+            <!-- TINGKAT KEPUASAN -->
+            <div class="section">
+                <h3>Tingkat Kepuasan</h3>
+                <p style="font-size:13px; color:#777; margin:0 0 8px 0;">
+                    Bagaimana penilaian Anda terhadap produk kami secara keseluruhan?
+                </p>
+                <div class="radio-group">
+                    <label><input type="radio" name="kepuasan" value="sangat_puas"> Sangat Puas</label>
+                    <label><input type="radio" name="kepuasan" value="puas"> Puas</label>
+                    <label><input type="radio" name="kepuasan" value="cukup"> Cukup Puas</label>
+                    <label><input type="radio" name="kepuasan" value="kurang"> Kurang Puas</label>
+                    <label><input type="radio" name="kepuasan" value="tidak_puas"> Tidak Puas</label>
+                </div>
+            </div>
+
+            <!-- KOMENTAR -->
+            <div class="textarea-section" style="padding-bottom:20px;">
+                <h3>Komentar &amp; Saran</h3>
+                <textarea name="komentar" rows="5" cols="40" wrap="physical"
+                    placeholder="Tuliskan komentar, saran, atau masukan Anda di sini..."></textarea>
+            </div>
+
+            <!-- TOMBOL SUBMIT & RESET -->
+            <div class="btn-group">
+                <input type="submit" value="Kirim Survey" name="submit">
+                <input type="reset" value="Reset Form" name="reset">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
